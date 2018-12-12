@@ -29,3 +29,5 @@ Run the `build.sh` script found in each base directory
 Run `docker push lenderhomepage/php:${tag}`
 
 You need to have a Docker Hub account and be a collaborator in the `lenderhomepage` team.
+
+To log in, run `docker login` and enter your credentials
