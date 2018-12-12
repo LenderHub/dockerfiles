@@ -1,4 +1,4 @@
-FROM lenderhomepage/nginx-php-fpm:latest
+FROM lenderhomepage/php:fpm-nginx-latest
 
 RUN apk --update --upgrade --no-cache add \
     autoconf \
