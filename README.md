@@ -1,6 +1,6 @@
 # Dockerfiles
 
-## nginx-php-fpm
+## php
 
 A series of images based on https://gitlab.com/ric_harvey/nginx-php-fpm
 
@@ -10,6 +10,22 @@ A series of images based on https://gitlab.com/ric_harvey/nginx-php-fpm
 * BCMath
 * Other stuff to make Laravel work
 
-`lenderhub/nginx-php-fpm:latest` - Base image for usage on most services
+The base image is `lenderhomepage/php`
 
-`lenderhub/nginx-php-fpm-mongo` - Image to use if you need MongoDB support
+To use the base `fpm-nginx` image, the image name would be `lenderhomepage/php:fpm-nginx-latest`
+
+### Tags
+
+* `fpm-nginx-latest`
+* `fpm-nginx-mongo-latest` - Includes the mongo PHP extension`
+* `ci-latest`
+
+### Building
+
+Run the `build.sh` script found in each base directory
+
+### Pushing to Docker Hub
+
+Run `docker push lenderhomepage/php:${tag}`
+
+You need to have a Docker Hub account and be a collaborator in the `lenderhomepage` team.
