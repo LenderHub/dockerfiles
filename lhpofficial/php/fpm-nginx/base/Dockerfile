@@ -20,3 +20,4 @@ RUN apk add --upgrade --update --no-cache \
     && apk del --no-cache autoconf g++ libtool make pcre-dev freetype-dev libpng-dev libjpeg-turbo-dev \
     && docker-php-ext-install sockets \
     && docker-php-ext-install pcntl
+    
