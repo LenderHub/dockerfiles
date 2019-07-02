@@ -21,3 +21,17 @@ RUN apk add --upgrade --update --no-cache \
     && docker-php-ext-install sockets \
     && docker-php-ext-install pcntl
     
+# ----------------------------------------------------------------------------------------------------------------------
+# fluentd + logz.io
+# ----------------------------------------------------------------------------------------------------------------------    
+
+RUN apk add --upgrade --update --no-cache vim busybox-extras
+
+RUN apk add --upgrade --update --no-cache ruby ruby-bundler ruby-dev ruby-irb ruby-rdoc ruby-webrick gcc build-base \
+    && gem install fluentd \
+    && gem install fluent-plugin-logzio \
+    && fluentd --setup /etc/fluentd \
+    && mkdir /etc/fluentd/conf.d \
+    && echo include conf.d/*.conf >> /etc/fluentd/fluent.conf
+
+# ----------------------------------------------------------------------------------------------------------------------
