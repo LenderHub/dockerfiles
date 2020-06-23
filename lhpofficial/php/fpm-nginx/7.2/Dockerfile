@@ -23,10 +23,10 @@ RUN apk add --upgrade --update --no-cache \
 # ----------------------------------------------------------------------------------------------------------------------
 # pdftk / PDF conversion
 # ----------------------------------------------------------------------------------------------------------------------
-RUN echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories \
-    && apk add --no-cache --update \
-            libgcj \
-            pdftk    
+# RUN echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories \
+#     && apk add --no-cache --update \
+#             libgcj \
+#             pdftk    
     
 # ----------------------------------------------------------------------------------------------------------------------
 # fluentd + logz.io
@@ -34,12 +34,12 @@ RUN echo "@edgecommunity http://nl.alpinelinux.org/alpine/edge/community/" >> /e
 
 # RUN apk add --upgrade --update --no-cache vim busybox-extras
 
-RUN apk add --upgrade --update --no-cache ruby ruby-bundler ruby-dev ruby-irb ruby-rdoc ruby-webrick gcc build-base \
-    && gem install fluentd \
-    && gem install fluent-plugin-logzio \
-    && fluentd --setup /etc/fluentd \
-    && mkdir /etc/fluentd/conf.d \
-    && echo include conf.d/*.conf >> /etc/fluentd/fluent.conf
+# RUN apk add --upgrade --update --no-cache ruby ruby-bundler ruby-dev ruby-irb ruby-rdoc ruby-webrick gcc build-base \
+#     && gem install fluentd \
+#     && gem install fluent-plugin-logzio \
+#     && fluentd --setup /etc/fluentd \
+#     && mkdir /etc/fluentd/conf.d \
+#     && echo include conf.d/*.conf >> /etc/fluentd/fluent.conf
 
 # ----------------------------------------------------------------------------------------------------------------------
 
